@@ -1,0 +1,32 @@
+<table>
+  <tr>
+    <th>Search #</th>
+    <th>Search string</th>
+    <th>Timestamp</th>
+    <th>Total Hits</th>
+    <th>Operator</th>
+    <th>Database</th>
+  </tr>
+  <tr  *ngFor="let query of _sharedService.queryArray ; let i=index">
+  <td> 
+    {{i+1}}
+  </td>
+  <td>
+  {{printHistoryJSONObject[i]['query']}}
+  </td>
+  <td> 
+  {{printHistoryJSONObject[i]['timestamp']}}
+  </td>
+  <td>
+  {{printHistoryJSONObject[i]['Numberofhits']}}
+  </td>
+  <td>
+  {{printHistoryJSONObject[i]['operator']}}
+  </td>
+  <td>
+  {{printHistoryJSONObject[i]['Database']}}
+  </td>
+</tr>
+</table>
+<br>
+<input type="button" value="Home" class="button" (click)="returnHome()">

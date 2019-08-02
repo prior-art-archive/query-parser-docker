@@ -1,0 +1,45 @@
+<div>
+    Filter by:
+    <div class="panel-group facetAccordionDiv" id="accordion">
+        <div class="panel panel-default" *ngFor="let facet of facetData; let facetIndex=index">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="accordion-toggle" data-toggle="collapse" [attr.data-target]="'#Facet'+facetIndex">{{facet.facetName}}</div>
+                </h4>
+            </div>
+            <div id="Facet{{facetIndex}}" class="panel-collapse collapse in">
+                <div class="panel-body">
+                        <div *ngFor="let filters of facet.data">
+                    <div class="facetDiv" *ngIf="facet.facetName!='Date Range'">
+                            <div class="divFloatLeft filterKey">
+                              <input type="checkbox" class="filterCheckBox" name="{{filters.key}}" value="{{filters.key}}" checked="{{filters.selected }}" (click)="updateSelectedFacet(facet.facetName, $event)"/>{{filters.key}}</div>
+                               
+                            <div class="divFloatRight filterCount">{{filters.value}}</div>
+                        </div>
+                        
+                        <div class="facetDiv" *ngIf="facet.facetName=='Date Range'">
+                            <div class="divFloatLeft filterKey">
+                              <input type="radio" class="filterCheckBox" name="radioButton" value="{{filters.key}}" checked="{{filters.selected}}" (click)="updateSelectedFacet(facet.facetName, $event)"/>{{filters.key}}</div>
+                               
+                            <div class="divFloatRight filterCount">{{filters.value}}</div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            
+        </div>
+    </div>
+     <div class="accordion-toggle" data-toggle="collapse" data-parent="#accordion">
+    Sort By:
+     </div>
+<div class="panel-group facetAccordionDiv" id="sortbyAccordion">
+    <div id="Sort By:" class="panel panel-default">
+       
+            <div class="panel-body">
+            <input name="divFloatLeft"  type="radio" value="Publication Date" (click)="handleClick('Publication Date')" > Publication Date<br/>
+            <input name="divFloatLeft"  type="radio" value="Relevancy" (click)="handleClick('Relevancy')" > Relevancy<br/>
+            </div>
+            </div>
+</div>
+</div>

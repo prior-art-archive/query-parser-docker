@@ -1,0 +1,352 @@
+@charset "UTF-8";
+.homeDiv {
+    background-color: white;
+    height: 100%;
+}
+
+.opratorHomeDiv {
+    margin-top: 20px;
+}
+
+.homeSearchBox {
+    width: 50%;
+    margin: auto;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid #AAAAAA;
+    padding-left: 10px
+}
+
+.searchDivHome {
+    padding-top: 15%
+}
+
+.homeLabel {
+    font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+    font-weight: bold;
+    color:#0088CC;
+}
+
+.searchIcon {
+    cursor: pointer;
+}
+
+.headerDiv {
+    background-color:#f3eeea;
+    display: inline-block;
+    width: 100%
+}
+    
+.headerTitle {
+    color: white;
+    padding-left: 38%;
+}
+
+.headerHelp {
+    margin-top: 20px;
+    line-height: 40px;
+    margin-right: 50%;
+}
+
+.helpAnchor {
+    color: white;
+}
+
+.helpImage {
+    width: 20%;
+    margin-right: 5px;
+}
+
+.divFloatLeft {
+    float: left
+}
+
+.divFloatRight {
+    float: right
+}
+
+.showResultsDiv {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.resultCount {
+    width: 42px;
+    border-radius: 4px;
+    border: 1px solid #AAAAAA;
+}
+
+.resultSearchPanel {
+    margin-top: 30px;
+}
+
+.searchBoxDiv {
+    width: 100%;
+    display: inline-block;
+}
+.form-search-body-text {
+    margin-bottom: 10px;
+    margin-left: 450px;
+    margin-top: 20px;
+    padding-top: 30px;
+    color: #000000;
+    font-size: 16px;
+}
+.searchTextBox {
+    width: 50%;
+    margin-right: 30px
+}
+
+.searchBtn
+{border-radius: 0 4px 4px 0;
+}
+
+.operatorSelect {
+    width: 220px;
+    border-radius: 4px;
+    height: 30px;
+    border: 1px solid #AAAAAA;
+}
+
+.operatorSelectOption {
+    height: 28px
+}
+
+.input-group-addon:first-child {
+    border-right: 0;
+}
+
+.input-group-addon:last-child {
+    border-left: 0
+}
+
+.input-group .form-control:last-child,
+.input-group-addon:last-child,
+.input-group-btn:first-child>.btn-group:not(:first-child)>.btn,
+.input-group-btn:first-child>.btn:not(:first-child),
+.input-group-btn:last-child>.btn,
+.input-group-btn:last-child>.btn-group>.btn,
+.input-group-btn:last-child>.dropdown-toggle {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0
+}
+
+.form-control:focus {
+    border-color: #ccc;
+    box-shadow: none;
+}
+
+.search-input {
+    border-right-width: 0;
+    border-left-width: 0;
+    font-size: 16px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -moz-transition: none;
+    -webkit-transition: none;
+}
+
+.search-icon {
+    border-right: 0 solid transparent;
+    background: transparent;
+}
+
+.clear-icon {
+    border-left: 0 solid transparent;
+    background: transparent;
+    border-radius: 4px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+.buttonPanel {
+    width: 100%;
+    display: inline-block;
+    margin-top: 20px
+}
+
+.buttonClearHistoryDiv {
+    margin-left: 35%;
+
+     
+}
+
+.help{
+    padding-left: 800px;
+}
+
+
+.button {
+    border-radius: 4px;
+    border: 1px solid #AAAAAA;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px
+}
+.buttonDeleteHistory{
+    width:207px;
+}
+
+.buttonPrintHistory {
+    display: inline;
+    padding: 4px;
+    width: 195px;
+    margin-bottom: 0;
+    margin-left: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+.hrRule {
+    border-top: 2px solid #8c8b8b;
+}
+
+.teaserText {
+    width: 95%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.panel-heading .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';
+    /* essential for enabling glyphicon */
+    content: "\e114";
+    /* adjust as needed, taken from bootstrap.css */
+    float: right;
+    /* adjust as needed */
+    color: grey;
+    /* adjust as needed */
+}
+
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080";
+    /* adjust as needed, taken from bootstrap.css */
+}
+
+[data-icon]:before {
+    font-family: "atlantic" !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="al-"]:before,
+[class*=" al-"]:before {
+    font-family: "atlantic" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.al-search {
+    color: #626469;
+    vertical-align: middle;
+    display: inline-block;
+    height: 20px;
+    font-size: 18px;
+}
+
+.al-clear {
+    cursor: pointer;
+    color: #b0b0b2;
+    vertical-align: middle;
+    display: inline-block;
+    height: 18px;
+    margin-top: 2px;
+}
+
+.al-arrow-right:before {
+    content: "a";
+}
+
+.al-chat:before {
+    content: "b";
+}
+
+.al-star:before {
+    content: "c";
+}
+
+.al-check:before {
+    content: "d";
+}
+
+.al-lock:before {
+    content: "e";
+}
+
+.al-search:before {
+    content: "f";
+}
+
+.al-clear:before {
+    content: "g";
+}
+
+.al-community:before {
+    content: "h";
+}
+
+.al-arrow-down:before {
+    content: "i";
+}
+
+.al-pop:before {
+    content: "j";
+}
+
+.facetAccordionDiv {
+    margin-top: 10px;
+}
+
+.facetDiv {
+    display: inline-block;
+    width: 100%
+}
+
+.filterKey {
+    width: 70%;
+}
+
+.filterCount {
+    margin-right: 10px;
+}
+
+.filterCheckBox {
+    margin-right: 5px;
+}
+
+.metaDiv {
+    color: #999;
+    font-size: 13px;
+}
+
+.metaLabel {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.metaSrc {
+    font-size: 11px;
+    margin-top: 3px
+}

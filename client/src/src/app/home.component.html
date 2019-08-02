@@ -1,0 +1,38 @@
+<!-- Landing page/Home page component -->
+<div class="homeDiv">
+    <div>
+        <div align="center" class="searchDivHome">
+             <!-- <h1 class="headerTitle">Archive Search</h1>-->
+             <img src="assets/images/logo.png" alt="image">
+            <div>
+                <span> <input value="" id="query-box" [(ngModel)]="id_query"
+					autocomplete="off" name="queryFilter" 
+					placeholder="Search..."
+					class="input-block-level homeSearchBox" type="text" style="size: 70;" (keydown)="keyDownFunction($event)"> <button type="submit" style="background-color:#466db1;margin-left: 10px;" class="button" id="searchBtn" (click)="getResults()">Search</button>
+				</span>
+                
+            </div>
+            <span id="helpLink" class="help">
+                    <a href="../assets/helpfiles/help.htm" target="_blank">Help</a>
+                </span>
+            <div [ngBusy]="busy"></div>
+            <div class="opratorHomeDiv"> <b>Operator:</b>
+                <select name="operator" id="operator-text" class="operatorSelect" [(ngModel)]="selectedOperator" (ngModelChange)="onChangeOp($event)" >
+      <option *ngFor="let c of operatorNames" [ngValue]="c" class="operatorSelectOption"> {{c.val}} </option>
+    </select>
+            </div>
+
+            <div class="buttonPanel">
+                <div class="divFloatLeft buttonClearHistoryDiv">
+                    <input type="button" value="Clear Search History" title="History" class="button buttonDeleteHistory " (click)="deleteHistory()">
+                    <input type="button" value="Print Search History" title="History" class="button buttonPrintHistory" (click)="printResults()">
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <p class="form-search-body-text">Use Archive Search to find content that has been removed from public availability.</p>
+</div>

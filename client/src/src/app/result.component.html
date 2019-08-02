@@ -1,0 +1,76 @@
+<div class="resultSearchPanel">
+    <div class="searchBoxDiv">
+        <div class="searchTextBox divFloatLeft">
+            <div class="input-group twitter-typeahead" style="color: aeaeae;">
+                <span id="glassicon" (click)="getResults()" class="input-group-addon search-icon" style="cursor: pointer;">
+					<i class="icon al-search"></i>
+				</span> <input name="queryFilter" required [(ngModel)]="id_query" id="query-box" type="search" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-control search-input" style="padding-left: 2px; size= 70;"
+                    placeholder="Search to find contents removed from Public Availability" (keydown)="keyDownFunction($event)" />
+                <span class="input-group-addon clear-icon"> <i class="icon al-clear" id="resetSearchText"></i>
+				</span>
+            </div>
+        </div>
+        <div>
+	 <button type="submit" style="background-color:#466db1" class="button" id="searchBtn" (click)="getResults()">Search</button>
+     <select name="operator" id="operator-text" class="operatorSelect" [(ngModel)]="selectedOperator" (ngModelChange)="onChangeOp($event)" >
+      <option *ngFor="let c of operatorNames" [ngValue]="c" class="operatorSelectOption"> {{c.val}} </option>
+    </select>
+        </div>
+    </div>
+    <div class="buttonPanel">
+        <div class="divFloatLeft buttonClearHistoryDiv">
+            <input type="button" value="Clear History" title="History" class="button buttonDeleteHistory" (click)="deleteHistory()">
+        </div>
+        <div>
+            <input type="button" value="Print History" title="History" class="button buttonPrintHistory" (click)="printResults()">
+        </div>
+    </div>
+	<br>
+	<br>
+    <div>{{results.debugQuery}}</div>
+</div>
+<div [ngBusy]="busy"></div>
+<hr class="hrRule" />
+
+<div class="modal-body row">
+    <div *ngIf="results && results.totalHits>0 ;else noResults" class="col-md-9">
+        <div class='resultsFound'>
+            Search Results found for "<b>{{results.searchQuery}}</b>"
+        </div>
+<div class='showResultsDiv' *ngIf="results && results.totalHits">
+Show <select [(ngModel)]="selectedresCount" (ngModelChange)="onChange($event)" >
+      <option *ngFor="let c of resCount" [ngValue]="c"> {{c.val}} </option>
+    </select> of {{results.totalHits}} results
+    </div>
+
+        <div *ngFor="let res of results.usptoResponses | paginate: { itemsPerPage: filterCount, currentPage: newPage, totalItems: results.totalHits}">
+            <div>
+                <a href="{{res.url}}" (click)="clickURL(res.url)" target="_blank">{{res.title}}</a>
+                <div style="color: #1E9F40">{{res.url}}</div>
+                <div class="teaserText" [innerHTML]="res.teaser">{{res.teaser}}</div>
+                <div class="metaDiv" *ngIf="res.publicationDate!=null">
+                    <span class="metaLabel">Publication Date:</span>{{res.publicationDate}}
+                </div>
+                <div class="metaDiv" *ngIf="res.uploadDate!=null">
+                    <span class="metaLabel">Upload Date:</span>{{res.uploadDate}}
+                </div>
+                <div class="metaDiv" *ngIf="res.copyright!=null">
+                    <span class="metaLabel">Copyright:</span>{{res.copyright}}
+                </div>
+                <div class="metaDiv metaSrc" *ngIf="res.source!=null">
+                    <span class="metaLabel">Source:</span>{{res.source}}
+                </div>
+            </div>
+            <br />
+        </div>
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+       
+    </div>
+    
+    <ng-template #noResults>
+        <div class="col-md-9">No results found for "<b>{{id_query}}</b>"</div>
+    </ng-template>
+    <div *ngIf="results && results.totalHits>0 || is_Filtered" class="col-md-3">
+        <app-facet [facetData]="results.facets" [isFiltered]="is_Filtered" (facetChangeEvent)="facetChanged($event)"></app-facet>
+    </div>
+</div>
