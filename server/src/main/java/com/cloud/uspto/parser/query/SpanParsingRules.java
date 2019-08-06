@@ -79,7 +79,7 @@ public class SpanParsingRules extends BaseParser<SpanNode> {
                  ZeroOrMore(
                          WITH(), op.set(match()),
                          Term(),
-                         ppushWithContext(op)
+                         pushWithContext(op)
                  )
          );
      }
