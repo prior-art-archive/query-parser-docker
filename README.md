@@ -22,3 +22,5 @@ docker run -p 5000:5000 -d --env-file config/properties.env uspto-docker-searchu
 
 Use docker ps to see the container ID and use that for seeing logs using
 docker logs <Container ID > and stop using docker stop <container ID >.
+
+Note: this project uses Java 8
